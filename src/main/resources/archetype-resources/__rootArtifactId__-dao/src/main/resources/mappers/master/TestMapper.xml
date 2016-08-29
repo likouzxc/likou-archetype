@@ -1,0 +1,23 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="${package}.dao.master.TestMasterDAO">
+
+    <insert id="addOne" parameterType="${package}.bean.TestBean" >
+      insert into user (`id`,`username`,`password`,`email`,`gender`,`phone`,`birthday`,`create_time`)
+      VALUES(${symbol_pound}{id},${symbol_pound}{username},${symbol_pound}{password},${symbol_pound}{email},${symbol_pound}{gender},${symbol_pound}{phone},${symbol_pound}{birthday},${symbol_pound}{createTime})
+    </insert>
+
+    <resultMap id="resultMap" type="${package}.bean.TestBean">
+        <result column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="email" property="email"/>
+        <result column="gender" property="gender"/>
+        <result column="phone" property="phone"/>
+        <result column="birthday" property="birthday"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+</mapper>

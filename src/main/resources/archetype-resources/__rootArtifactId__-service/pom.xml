@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>${rootArtifactId}</artifactId>
+        <groupId>${groupId}</groupId>
+        <version>${version}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>${artifactId}</artifactId>
+    <version>${symbol_dollar}{module.version}</version>
+    <packaging>jar</packaging>
+    <description>api的实现类</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-piping</artifactId>
+            <version>${symbol_dollar}{module.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-provider</artifactId>
+            <version>${symbol_dollar}{module.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.likou</groupId>
+                    <artifactId>archetype-prv</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-cache</artifactId>
+            <version>${symbol_dollar}{module.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-domain</artifactId>
+            <version>${symbol_dollar}{module.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.likou</groupId>
+                    <artifactId>archetype-pojo</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.likou</groupId>
+                    <artifactId>archetype-dao</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,40 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!DOCTYPE html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=${version}"/>
+    <!--START-GLOBAL-CSS-->
+    ${symbol_pound}parse('/layout/css.vm')
+    ${symbol_pound}parse(${symbol_dollar}!p_css)
+    <!--END-GLOBAL-CSS-->
+</head>
+<body>
+
+<!--START-GLOBAL-TOP-->
+    ${symbol_pound}parse('/layout/top.vm')
+<!--END-GLOBAL-TOP-->
+
+<!--START-GLOBAL-MENU-->
+    ${symbol_pound}parse('/layout/menu.vm')
+<!--END-GLOBAL-MENU-->
+
+<!--START-GLOBAL-CONTENT-->
+    <div id="content">
+        ${symbol_dollar}screen_content
+    </div>
+<!--END-GLOBAL-CONTENT-->
+
+<!--START-GLOBAL-FOOTER-->
+    ${symbol_pound}parse('/layout/footer.vm')
+<!--END-GLOBAL-FOOTER-->
+
+<!--START-GLOBAL-JS-->
+    ${symbol_pound}parse('/layout/js.vm')
+    ${symbol_pound}parse(${symbol_dollar}!p_js)
+<!--END-GLOBAL-JS-->
+</body>
+</html>
